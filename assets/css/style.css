@@ -1,0 +1,343 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    background-color: #fff;
+    height: 80px;
+    margin:20px;
+    border-color: black;
+    border-radius:16px;
+    padding:0.5rem;
+}
+.SingnUp-button{
+    background-color: #5e2ced;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.ForPropertyOwner-button:hover{
+    background-color: #5e2ced;
+}
+
+.navbar-toggler {
+    border:none;
+    font-size:1.25rem;
+}
+
+.navbar-toggler:focus ,.btn-close:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link{
+    color:#666777;
+    font-weight: 500;
+}
+
+.nav-link:hover, .nav-link.active{
+color:#000;
+
+}
+
+/** @media (min-width:991px){
+    .nav-link::before{
+        content:"";
+        position: absolute;
+        bottom:0;
+        left:50%;
+        transform: translateX(-50%);
+        width:0;
+        height: 2px;
+        background-color: #009970;
+        visibility: hidden;
+        transform: 0.3sec ease-in-out;
+    }
+
+    .nav-link:hover::before,.nav-link.active::before{
+        width:100%;
+        visibility: visible;
+    }
+} **/
+
+/**   <!--Hero Secction start--> **/
+
+.hero{
+    background-color: rgb(247, 249, 249);
+    width: 100%;
+    height:590px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #666;
+}
+
+.hero-image img{
+    height: 550px;
+}
+
+
+/**   <!--Hero Secction end--> **/
+
+
+
+
+
+
+/**   <!--Services Section Start--> **/
+.second-Section{   
+    background-color: rgb(247, 249, 249);
+    width: 100%;
+    height:590px;
+}
+
+.container-services {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.services, .why-use {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+.service-item, .why-use-item {
+    flex: 1;
+    margin: 10px;
+    margin-top: 20px;
+    min-width: 150px;
+}
+.service-item img, .why-use-item img {
+    width: 80px;
+    height: 80px;
+}
+.why-use-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+.why-use-title h2 {
+    margin: 0 20px;
+    font-size: 24px;
+}
+.why-use-title::before, .why-use-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+}
+.why-use-title::before {
+    margin-right: 10px;
+}
+.why-use-title::after {
+    margin-left: 10px;
+}
+/**   <!--Hero Secction end--> **/
+
+
+
+
+
+
+
+
+/** <!--Team Section Start--> **/
+
+
+.third-Section{   
+    background-color: rgb(240, 255, 255);
+    width: 100%;
+    height:500px;
+    text-align: center;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+.team-section {
+    padding: 50px 0;
+}
+.team-section h1 {
+    font-size: 36px;
+    font-weight: normal;
+}
+.team-section h1 span {
+    font-weight: bold;
+}
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.team-member h2 {
+    font-size: 24px;
+    margin: 10px 0 5px;
+}
+.team-member p {
+    font-size: 16px;
+    color: #777;
+    margin: 0;
+}
+/** @media (max-width: 768px) {
+    .team-section h1 {
+        font-size: 28px;
+    }
+    .team-member img {
+        width: 150px;
+        height: 150px;
+    }
+    .team-member h2 {
+        font-size: 20px;
+    }
+    .team-member p {
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    .team-section h1 {
+        font-size: 24px;
+    }
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+    .team-member h2 {
+        font-size: 18px;
+    }
+    .team-member p {
+        font-size: 12px;
+    }
+}#5e2ced **/
+
+/**  <!--Team Section end--> **/
+
+
+
+
+/**   <!--about how it works Section Start--> **/
+
+.four-section{
+    width: 80%;
+    height:900px;
+    margin: 0 auto;
+    background-color: #e8e6f0;
+    padding: 20px;
+    margin-top: 20px;
+}
+.four-section-block{
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.four-section-block img{
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    }
+.four-section-block:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+.four-section-block:nth-child(even) img {
+        margin-right: 0;
+        margin-left: 20px;}
+
+.four-section-content {
+        max-width: 500px;
+    }
+
+.four-section-content h3 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+.four-section-content p {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+/**   <!--about how it works Section end--> **/
+
+
+
+
+
+.five-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 520px;
+    background-color: rgb(240, 255, 255);
+
+    }
+    .five-section-content {
+        text-align: left;
+        margin-left: 50px;
+    }
+    .five-section-content h1 {
+        color: #5e2ced;
+        font-size: 36px;
+        margin: 0;
+    }
+    .five-section-content p {
+        color: #555;
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    
+    .five-section-app-buttons {
+        display: flex;
+        margin-top: 20px;
+    }
+    .five-section-app-buttons img {
+        width: 150px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+
+
+
+  

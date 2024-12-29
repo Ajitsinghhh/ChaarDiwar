@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rental Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #008080;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-row .form-group {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .form-row .form-group:last-child {
+            margin-right: 0;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+        }
+        .input-group span {
+            display: inline-block;
+            padding: 0 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+        }
+        .input-group input {
+            flex: 1;
+            border-left: none;
+            border-radius: 0 4px 4px 0;
+        }
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .radio-group input {
+            margin-right: 5px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        .calendar-icon {
+            margin-left: -30px;
+            font-size: 18px;
+            color: #ccc;
+        }
+        select {
+            appearance: none;
+            background: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"%3E%3Cpath fill="%23999" d="M2 0L0 2h4z"/%3E%3C/svg%3E') no-repeat right 10px center;
+            background-size: 8px 10px;
+        }
+        .form-group .select-wrapper {
+            position: relative;
+        }
+        .form-group .select-wrapper select {
+            padding-right: 30px;
+        }
+        .form-actions {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            background-color: #009688;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-actions button:hover {
+            background-color: #00796b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Provide rental details about your property</h1>
+        <form>
+            <div class="form-group">
+                <label>Property available for</label>
+                <div class="radio-group">
+                    <input type="radio" id="only-rent" name="property-availability" checked>
+                    <label for="only-rent">Only rent</label>
+                    <input type="radio" id="only-lease" name="property-availability">
+                    <label for="only-lease">Only lease</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="expected-rent">Expected Rent *</label>
+                    <div class="input-group">
+                        <span>₹</span>
+                        <input type="text" id="expected-rent" placeholder="Enter Amount">
+                        <span>/ Month</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="expected-deposit">Expected Deposit *</label>
+                    <div class="input-group">
+                        <span>₹</span>
+                        <input type="text" id="expected-deposit" placeholder="Enter Amount">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="rent-negotiable">
+                <label for="rent-negotiable">Rent Negotiable</label>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="monthly-maintenance">Monthly Maintenance</label>
+                    <select id="monthly-maintenance">
+                        <option value="">Select</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="available-from">Available From *</label>
+                    <div class="input-group">
+                        <input type="text" id="available-from" placeholder="dd/mm/yyyy">
+                        <span class="calendar-icon">📅</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Preferred Tenants *</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="anyone">
+                    <label for="anyone">Anyone</label>
+                    <input type="checkbox" id="family">
+                    <label for="family">Family</label>
+                    <input type="checkbox" id="bachelor-female">
+                    <label for="bachelor-female">Bachelor Female</label>
+                    <input type="checkbox" id="bachelor-male">
+                    <label for="bachelor-male">Bachelor Male</label>
+                    <input type="checkbox" id="company">
+                    <label for="company">Company</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="furnishing">Furnishing *</label>
+                    <select id="furnishing">
+                        <option value="">Select</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="parking">Parking *</label>
+                    <select id="parking">
+                        <option value="">Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="4" placeholder="Write a few lines about your property, something which is special and makes your property stand out. Please do not mention your contact details in any format."></textarea>
+            </div>
+            <div class="form-actions">
+                <button>Save and Continue</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

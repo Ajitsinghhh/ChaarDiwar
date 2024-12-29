@@ -1,0 +1,145 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   House Visits Availability
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            color: #00a651;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .availability, .time-schedule {
+            margin-bottom: 20px;
+        }
+        .availability h4, .time-schedule h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .availability button, .time-schedule input[type="time"], .time-schedule input[type="checkbox"] {
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .availability button:hover, .time-schedule input[type="time"]:hover, .time-schedule input[type="checkbox"]:hover {
+            background-color: #ddd;
+            color: #000;
+        }
+        .availability button.selected {
+            background-color: #00a651;
+            color: #fff;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        .footer button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .footer .back {
+            background-color: #b0b0b0;
+            color: #fff;
+        }
+        .footer .back:hover {
+            background-color: #999;
+        }
+        .footer .finish {
+            background-color: #ff4d4d;
+            color: #fff;
+        }
+        .footer .finish:hover {
+            background-color: #e60000;
+        }
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+            }
+            .card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="header">
+    Make house visits hassle-free by providing us your availability
+   </div>
+   <div class="availability">
+    <h4>
+     Availability
+    </h4>
+    <button onclick="selectAvailability(this)">
+     Everyday
+     <br/>
+     Mon-Sun
+    </button>
+    <button onclick="selectAvailability(this)">
+     Weekday
+     <br/>
+     Mon-Fri
+    </button>
+    <button onclick="selectAvailability(this)">
+     Weekend
+     <br/>
+     Sat,Sun
+    </button>
+   </div>
+   <div class="time-schedule">
+    <h4>
+     Select Time Schedule
+    </h4>
+    <input placeholder="Start time" type="time"/>
+    <input placeholder="End time" type="time"/>
+    <input type="checkbox"/>
+    Available All Day
+   </div>
+   <div class="footer">
+    <button class="back">
+     Back
+    </button>
+    <button class="finish">
+     Finish Posting
+    </button>
+   </div>
+  </div>
+  <script>
+   function selectAvailability(button) {
+            // Remove 'selected' class from all buttons
+            const buttons = document.querySelectorAll('.availability button');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+
+            // Add 'selected' class to the clicked button
+            button.classList.add('selected');
+        }
+  </script>
+ </body>
+</html>

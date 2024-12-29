@@ -1,0 +1,307 @@
+<html>
+<head>
+    <title>Property Details</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #008000;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input[type="number"] {
+            width: 50px;
+            text-align: center;
+        }
+        .form-group select, .form-group input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group .btn-group {
+            display: flex;
+            align-items: center;
+        }
+        .form-group .btn-group button {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-group .btn-group button:hover {
+            background-color: #f0f0f0;
+        }
+        .form-group .btn-group button.active {
+            background-color: #008000;
+            color: #fff;
+        }
+        .form-group .btn-group button:first-child {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+        .form-group .btn-group button:last-child {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+        .form-group .btn-group button:not(:last-child) {
+            border-right: none;
+        }
+        .form-group .select-group {
+            display: flex;
+            align-items: center;
+        }
+        .form-group .select-group select {
+            margin-left: 10px;
+        }
+        .form-group .phone-group {
+            display: flex;
+            align-items: center;
+        }
+        .form-group .phone-group img {
+            width: 24px;
+            height: 16px;
+            margin-right: 10px;
+        }
+        .form-group .phone-group select {
+            width: 60px;
+            padding: 4px;
+            margin-right: 10px;
+        }
+        .amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .amenities .amenity {
+            display: flex;
+            align-items: center;
+            width: 45%;
+        }
+        .amenities .amenity input {
+            margin-right: 10px;
+        }
+        .amenities .amenity label {
+            display: flex;
+            align-items: center;
+        }
+        .amenities .amenity label i {
+            margin-right: 10px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .buttons .save-btn {
+            background-color: #ff0000;
+            color: #fff;
+        }
+        .buttons .save-btn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Provide additional details about your property to get maximum visibility</h2>
+        <div class="form-group">
+            <div>
+                <label for="bathrooms">Bathroom(s)*</label>
+                <div class="btn-group">
+                    <button onclick="decreaseValue('bathrooms')">-</button>
+                    <input id="bathrooms" readonly="" type="number" value="0"/>
+                    <button onclick="increaseValue('bathrooms')">+</button>
+                </div>
+            </div>
+            <div>
+                <label for="balcony">Balcony</label>
+                <div class="btn-group">
+                    <button onclick="decreaseValue('balcony')">-</button>
+                    <input id="balcony" readonly="" type="number" value="0"/>
+                    <button onclick="increaseValue('balcony')">+</button>
+                </div>
+            </div>
+            <div>
+                <label for="water-supply">Water Supply</label>
+                <select id="water-supply">
+                    <option>Select</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <label>Gym*</label>
+                <div class="btn-group">
+                    <button onclick="toggleActive(this)">No</button>
+                    <button onclick="toggleActive(this)">Yes</button>
+                </div>
+            </div>
+            <div>
+                <label>Non-Veg Allowed*</label>
+                <div class="btn-group">
+                    <button onclick="toggleActive(this)">No</button>
+                    <button onclick="toggleActive(this)">Yes</button>
+                </div>
+            </div>
+            <div>
+                <label>Gated Security*</label>
+                <div class="btn-group">
+                    <button onclick="toggleActive(this)">No</button>
+                    <button onclick="toggleActive(this)">Yes</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <label for="property-show">Who will show the property?*</label>
+                <div class="select-group">
+                    <i class="fas fa-key"></i>
+                    <select id="property-show">
+                        <option>Select</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label for="secondary-number">Secondary Number</label>
+                <div class="phone-group">
+                    <img alt="Flag of India" height="16" src="https://storage.googleapis.com/a1aa/image/fuzqg8ez5cgOtEKt5eZsGo37CDe6qNuqffKmN1YKoJ4r37veJA.jpg" width="24"/>
+                    <select>
+                        <option>+91</option>
+                    </select>
+                    <input id="secondary-number" placeholder="Secondary Number" type="text"/>
+                </div>
+            </div>
+        </div>
+        <h3>Select the available amenities</h3>
+        <div class="amenities">
+            <div class="amenity">
+                <input id="lift" type="checkbox"/>
+                <label for="lift"><i class="fas fa-elevator"></i>Lift</label>
+            </div>
+            <div class="amenity">
+                <input id="internet" type="checkbox"/>
+                <label for="internet"><i class="fas fa-wifi"></i>Internet Services</label>
+            </div>
+            <div class="amenity">
+                <input id="ac" type="checkbox"/>
+                <label for="ac"><i class="fas fa-snowflake"></i>Air Conditioner</label>
+            </div>
+            <div class="amenity">
+                <input id="club-house" type="checkbox"/>
+                <label for="club-house"><i class="fas fa-users"></i>Club House</label>
+            </div>
+            <div class="amenity">
+                <input id="intercom" type="checkbox"/>
+                <label for="intercom"><i class="fas fa-phone"></i>Intercom</label>
+            </div>
+            <div class="amenity">
+                <input id="swimming-pool" type="checkbox"/>
+                <label for="swimming-pool"><i class="fas fa-swimmer"></i>Swimming Pool</label>
+            </div>
+            <div class="amenity">
+                <input id="children-play-area" type="checkbox"/>
+                <label for="children-play-area"><i class="fas fa-child"></i>Children Play Area</label>
+            </div>
+            <div class="amenity">
+                <input id="fire-safety" type="checkbox"/>
+                <label for="fire-safety"><i class="fas fa-fire-extinguisher"></i>Fire Safety</label>
+            </div>
+            <div class="amenity">
+                <input id="servant-room" type="checkbox"/>
+                <label for="servant-room"><i class="fas fa-bed"></i>Servant Room</label>
+            </div>
+            <div class="amenity">
+                <input id="shopping-center" type="checkbox"/>
+                <label for="shopping-center"><i class="fas fa-shopping-cart"></i>Shopping Center</label>
+            </div>
+            <div class="amenity">
+                <input id="gas-pipeline" type="checkbox"/>
+                <label for="gas-pipeline"><i class="fas fa-gas-pump"></i>Gas Pipeline</label>
+            </div>
+            <div class="amenity">
+                <input id="park" type="checkbox"/>
+                <label for="park"><i class="fas fa-tree"></i>Park</label>
+            </div>
+            <div class="amenity">
+                <input id="rain-water-harvesting" type="checkbox"/>
+                <label for="rain-water-harvesting"><i class="fas fa-water"></i>Rain Water Harvesting</label>
+            </div>
+            <div class="amenity">
+                <input id="sewage-treatment" type="checkbox"/>
+                <label for="sewage-treatment"><i class="fas fa-recycle"></i>Sewage Treatment Plant</label>
+            </div>
+            <div class="amenity">
+                <input id="house-keeping" type="checkbox"/>
+                <label for="house-keeping"><i class="fas fa-broom"></i>House Keeping</label>
+            </div>
+            <div class="amenity">
+                <input id="power-backup" type="checkbox"/>
+                <label for="power-backup"><i class="fas fa-battery-full"></i>Power Backup</label>
+            </div>
+            <div class="amenity">
+                <input id="visitor-parking" type="checkbox"/>
+                <label for="visitor-parking"><i class="fas fa-parking"></i>Visitor Parking</label>
+            </div>
+        </div>
+        <div class="buttons">
+            
+            <button class="save-btn">Save &amp; Continue</button>
+        </div>
+    </div>
+    <script>
+        function increaseValue(id) {
+            var value = parseInt(document.getElementById(id).value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            document.getElementById(id).value = value;
+        }
+
+        function decreaseValue(id) {
+            var value = parseInt(document.getElementById(id).value, 10);
+            value = isNaN(value) ? 0 : value;
+            value = value > 0 ? value - 1 : 0;
+            document.getElementById(id).value = value;
+        }
+
+        function toggleActive(button) {
+            var buttons = button.parentElement.children;
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+            button.classList.add('active');
+        }
+    </script>
+</body>
+</html>
