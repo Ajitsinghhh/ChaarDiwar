@@ -66,6 +66,8 @@ if (isset($_POST['delete'])) {
         $delete_listing->execute();
 
         $success_msg[] = 'Listing deleted successfully!';
+        echo "<script>alert('Listing deleted successfully!');</script>";
+
     } else {
         $warning_msg[] = 'Listing already deleted!';
     }

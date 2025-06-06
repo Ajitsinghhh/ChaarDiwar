@@ -25,6 +25,8 @@ if (isset($_POST['signUp'])) {
         echo "Email Address Already Exists!";
     } else {
         // Insert the new user into the database
+        echo "<script>alert('Registration successful!');</script>";
+
         $insertQuery = "INSERT INTO users (id, name, number, email, password) 
                         VALUES ('$id', '$firstName', '$Pnumber', '$email', '$password')";
         if ($conn->query($insertQuery) === TRUE) {

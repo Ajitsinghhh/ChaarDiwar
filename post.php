@@ -114,7 +114,13 @@ try {
    ]);
 
    $success_msg[] = 'Property posted successfully!';
-} catch (Exception $e) {
+   echo "<script>alert('Property posted successfully!');</script>";
+
+   echo "<script>alert('Property posted successfully!');</script>";
+
+   } catch (Exception $e) {
+      echo "<script>alert('Error during posting: " . $e->getMessage() . "');</script>";
+
    $warning_msg[] = $e->getMessage();
 }
 }

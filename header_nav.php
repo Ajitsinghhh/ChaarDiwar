@@ -18,7 +18,8 @@ include_once 'connect.php';
 <body>
   <div class="section-six">
     <nav class="navbar">
-        ChaarDiwaar
+        <a href="javascript:history.back();" style="text-decoration: none; color: inherit;">MoovIn</a>
+
         <button  class="PostProperty-button"> <a href="post.php">POST PROPERTY</a></button>
         <div class="profile-dropdown">
           <div onclick="toggle()" class="profile-dropdown-btn">
@@ -43,30 +44,37 @@ include_once 'connect.php';
   
           <ul class="profile-dropdown-list">
             <li class="profile-dropdown-list-item">
-              <a href="#">
+              <a href="update.php">
                 <i class="fa-regular fa-user"></i>
                 Edit Profile
               </a>
             </li>
   
             <li class="profile-dropdown-list-item">
-              <a href="#">
+              <a href="request.php">
                 <i class="fa-regular fa-envelope"></i>
                 Inbox
               </a>
             </li>
   
             <li class="profile-dropdown-list-item">
-              <a href="#">
+              <a href="my_listings.php">
                 <i class="fa-solid fa-sliders"></i>
-                Settings
+                My Listings
+              </a>
+            </li>
+
+            <li class="profile-dropdown-list-item">
+              <a href="saved.php">
+                <i class="fa-solid fa-sliders"></i>
+                Saved
               </a>
             </li>
   
             <li class="profile-dropdown-list-item">
               <a href="#">
                 <i class="fa-regular fa-circle-question"></i>
-                Help & Support
+                Contact Us
               </a>
             </li>
             <hr />

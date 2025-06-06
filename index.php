@@ -1,7 +1,7 @@
 <html>
 <head>
   <title>
-    ChaarDiwaar.com
+    MoovIn.com
   </title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
@@ -13,7 +13,7 @@
 <body>
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand me-auto" href="#">Chaardiwaar</a>
+      <a class="navbar-brand me-auto" href="#">MoovIn</a>
 
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
@@ -99,7 +99,7 @@
         </div>
       </div>
       <div class="why-use-title">
-        <h2> Why Use ChaarDiwaar</h2>
+        <h2> Why Use MoovIn</h2>
       </div>
       <div class="why-use">
         <div class="why-use-item">
@@ -206,14 +206,14 @@
         <div class="four-section-conten">
           <h3>Deal Closure</h3>
           <p>Owner and tenant meet to close the deal directly.
-            ChaarDiwaar can help create a rental agreement and deliver it to your doorstep.</p>
+            MoovIn can help create a rental agreement and deliver it to your doorstep.</p>
         </div>
       </div>
     </div>
   </section>
   <!--about how it works Section End--> 
 
-  <!---Five Section-->
+  <!---Five Section
   <section class="five-section" id="contact">
     <div class="phones">
       <div class="phone">
@@ -237,7 +237,7 @@
     </div>
   </section>
 
-  <!--end of Five Section -->
+ end of Five Section -->
 
 
   <!---- start footer ----->
@@ -263,7 +263,7 @@
               style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
               <h3 class="f-title f_600 t_color f_size_18">Download</h3>
               <ul class="list-unstyled f_list">
-                <li><a href="#">Company</a></li>
+                <li><a href="/chatbot/chat.html">Company</a></li>
                 <li><a href="#">Projects</a></li>
                 <li><a href="#">My tasks</a></li>
               </ul>
@@ -307,7 +307,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 col-sm-7">
-            <p class="mb-0 f_400">© All rights reserved to <a href="#" target="_blank">Ajit Singh.</a></p>
+            <p class="mb-0 f_400">© All rights reserved to <a href="/Admin/login.php" target="_blank">Ajit Singh.</a></p>
           </div>
         </div>
       </div>
