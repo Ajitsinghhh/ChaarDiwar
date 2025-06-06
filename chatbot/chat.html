@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f7; /* Light gray background */
+            color: #333; /* Dark gray text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #1a73e8; /* DeepSeek blue */
+        }
+
+        /* Chat box styling */
+        #chat-box {
+            width: 80%;
+            max-width: 600px;
+            height: 400px;
+            border-radius: 12px;
+            padding: 20px;
+            background: white; /* White background */
+            border: 1px solid #e0e0e0; /* Light gray border */
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Chat messages */
+        .message {
+            padding: 12px 16px;
+            border-radius: 12px;
+            max-width: 75%;
+            word-wrap: break-word;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: #1a73e8; /* DeepSeek blue */
+            color: white;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background-color: #f1f3f4; /* Light gray */
+            color: #333; /* Dark gray text */
+        }
+
+        /* Input field styling */
+        #user-input {
+            width: 80%;
+            max-width: 600px;
+            padding: 12px;
+            border: 1px solid #e0e0e0; /* Light gray border */
+            border-radius: 25px;
+            outline: none;
+            background: white; /* White background */
+            color: #333; /* Dark gray text */
+            margin-top: 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        #user-input:focus {
+            border: 1px solid #1a73e8; /* DeepSeek blue on focus */
+            box-shadow: 0px 0px 8px rgba(26, 115, 232, 0.2); /* Subtle blue shadow */
+        }
+
+        /* Button styling */
+        button {
+            padding: 12px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 25px;
+            background-color: #1a73e8; /* DeepSeek blue */
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #1557b0; /* Darker blue on hover */
+        }
+
+        /* Scrollbar styling */
+        #chat-box::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #chat-box::-webkit-scrollbar-track {
+            background: #f1f3f4; /* Light gray */
+        }
+
+        #chat-box::-webkit-scrollbar-thumb {
+            background: #1a73e8; /* DeepSeek blue */
+            border-radius: 4px;
+        }
+
+        #chat-box::-webkit-scrollbar-thumb:hover {
+            background: #1557b0; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🚀 AI Chatbot</h2>
+    <div id="chat-box"></div>
+    <div style="width: 80%; max-width: 600px; display: flex; margin-top: 15px;">
+        <input type="text" id="user-input" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let userInput = document.getElementById("user-input").value;
+            if (userInput.trim() === "") return;
+
+            let chatBox = document.getElementById("chat-box");
+
+            // Append user message
+            let userMessage = `<div class="message user-message"><strong>You:</strong> ${userInput}</div>`;
+            chatBox.innerHTML += userMessage;
+
+            // Fetch bot response
+            fetch("http://127.0.0.1:5000/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let botMessage = `<div class="message bot-message"><strong>Bot:</strong> ${data.reply}</div>`;
+                chatBox.innerHTML += botMessage;
+                document.getElementById("user-input").value = "";
+                chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to latest message
+            })
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+
+</body>
+</html>
